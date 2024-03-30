@@ -25,7 +25,7 @@ const Home: NextPage = () => {
             <HoverBorderGradient
               containerClassName="rounded-full"
               as="button"
-              className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
+              className="bg-black  text-black dark:text-white flex items-center space-x-2"
               onClick={() => router.push("/market")}
             >
               <span>NFT Market</span>
@@ -44,7 +44,7 @@ const Home: NextPage = () => {
             <HoverBorderGradient
               containerClassName="rounded-full"
               as="button"
-              className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
+              className="bg-black  text-black dark:text-white flex items-center space-x-2"
               onClick={() => router.push("/game")}
             >
               <span>Let&apos;s Hack</span>
@@ -58,12 +58,13 @@ const Home: NextPage = () => {
               duration: 0.8,
               ease: "easeInOut",
             }}
+            onClick={() => router.push("/community")}
             className=" bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent "
           >
             <HoverBorderGradient
               containerClassName="rounded-full"
               as="button"
-              className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
+              className="bg-black text-black dark:text-white flex items-center space-x-2"
             >
               <span>Community</span>
             </HoverBorderGradient>

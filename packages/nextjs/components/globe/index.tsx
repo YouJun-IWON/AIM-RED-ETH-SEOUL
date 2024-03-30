@@ -396,7 +396,7 @@ export function MainGlobe() {
   ];
 
   return (
-    <div className="flex flex-row items-center justify-center py-20 h-screen md:h-auto dark:bg-black bg-white relative w-full ">
+    <div className="flex flex-row items-center justify-center py-20 h-screen md:h-auto bg-black  relative w-full ">
       <div className="max-w-8xl mx-auto w-full relative overflow-hidden h-full md:h-[42rem] px-4">
         <motion.div
           initial={{

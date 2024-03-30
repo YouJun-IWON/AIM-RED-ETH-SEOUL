@@ -1,5 +1,11 @@
-const page = () => {
-  return <div>page</div>;
+import { LampCommunity } from "~~/components/acui/lampCommunity";
+
+const Community = () => {
+  return (
+    <LampCommunity className="">
+      <></>
+    </LampCommunity>
+  );
 };
 
-export default page;
+export default Community;

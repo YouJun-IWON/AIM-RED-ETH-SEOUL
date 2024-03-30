@@ -31,10 +31,6 @@ export const menuLinks: HeaderMenuLink[] = [
     label: "Community",
     href: "/community",
   },
-  {
-    label: "Debug",
-    href: "/debug",
-  },
 ];
 
 export const HeaderMenuLinks = () => {

@@ -31,9 +31,9 @@ export const Footer = () => {
                 </div>
               ) : (
                 <div className="flex gap-4">
-                  <Image src="/red-member.png" width={150} height={150} alt="profile" />
-                  <span className="">
-                    <p className="text-3xl">{shortenAddress(address)}</p>
+                  <Image src="/red-member.png" width={120} height={120} alt="profile" />
+                  <span className="translate-y-4">
+                    <p className="text-xl">{shortenAddress(address)}</p>
                     <p>
                       {Number(totalCounter) <= 2 ? (
                         <Image src="/bronze.png" width={80} height={80} alt="" />
