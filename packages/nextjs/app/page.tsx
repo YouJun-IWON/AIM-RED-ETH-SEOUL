@@ -26,7 +26,7 @@ const Home: NextPage = () => {
               containerClassName="rounded-full"
               as="button"
               className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
-              onClick={() => router.push("/NFT-market")}
+              onClick={() => router.push("/market")}
             >
               <span>NFT Market</span>
             </HoverBorderGradient>

@@ -1,11 +1,33 @@
 "use client";
 
 import React from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { cn } from "~~/utils/cn";
 
 export const LampContainer = ({ children, className }: { children: React.ReactNode; className?: string }) => {
+  const [ranking, setRanking] = useState([]);
+
+  const fetchLeaderBoard = async () => {
+    try {
+      const response = await fetch("/api/ranking", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const data = await response.json();
+      setRanking(data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchLeaderBoard();
+  }, []);
+
   return (
     <div
       className={cn(
@@ -49,50 +71,17 @@ export const LampContainer = ({ children, className }: { children: React.ReactNo
                   <th>Favorite Subject</th>
                 </tr>
               </thead>
+
+              {/* body */}
               <tbody>
-                {/* row 1 */}
-                <tr>
-                  <th>1</th>
-                  <td>Cy Ganderton</td>
-                  <td>5858</td>
-                  <td>Jailbreaking</td>
-                </tr>
-              </tbody>
-              <tbody>
-                {/* row 1 */}
-                <tr>
-                  <th>2</th>
-                  <td>Cy Ganderton</td>
-                  <td>5858</td>
-                  <td>Jailbreaking</td>
-                </tr>
-              </tbody>
-              <tbody>
-                {/* row 1 */}
-                <tr>
-                  <th>3</th>
-                  <td>Cy Ganderton</td>
-                  <td>5858</td>
-                  <td>Jailbreaking</td>
-                </tr>
-              </tbody>
-              <tbody>
-                {/* row 1 */}
-                <tr>
-                  <th>4</th>
-                  <td>Cy Ganderton</td>
-                  <td>5858</td>
-                  <td>Jailbreaking</td>
-                </tr>
-              </tbody>
-              <tbody>
-                {/* row 1 */}
-                <tr>
-                  <th>5</th>
-                  <td>Cy Ganderton</td>
-                  <td>5858</td>
-                  <td>Jailbreaking</td>
-                </tr>
+                {ranking.map((rank: any, index) => (
+                  <tr key={index}>
+                    <td>{index + 1}</td>
+                    <td>{rank.creator}</td>
+                    <td>{rank.count.count || "N/A"}</td>
+                    <td>{rank.subject || "N/A"}</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>

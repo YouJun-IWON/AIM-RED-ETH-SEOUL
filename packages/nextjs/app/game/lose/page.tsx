@@ -37,7 +37,7 @@ const WinPage = () => {
             but rather a path to success.
           </p>
 
-          <Button onClick={() => router.replace("/game")} className="bg-red-800 w-[200px] mb-6">
+          <Button onClick={() => router.replace("/")} className="bg-red-800 w-[200px] mb-6">
             Retry
           </Button>
         </div>

@@ -2,12 +2,8 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Loader from "./shared/Loader";
-
 import { useAccount } from "wagmi";
-
-
 import { useScaffoldContractRead } from "~~/hooks/scaffold-eth";
-
 import shortenAddress from "~~/utils/shortenAddress";
 
 /**
@@ -17,11 +13,11 @@ export const Footer = () => {
   const { address, isConnecting } = useAccount();
   console.log("account", address);
 
-  // const { data: totalCounter } = useScaffoldContractRead({
-  //   contractName: "YourContract",
-  //   functionName: "userGreetingCounter",
-  //   args: ["0xd8da6bf26964af9d7eed9e03e53415d37aa96045"],
-  // });
+  const { data: totalCounter } = useScaffoldContractRead({
+    contractName: "RedTeamNFT",
+    functionName: "successCount",
+    args: [address],
+  });
 
   return (
     <div className="">
@@ -38,7 +34,17 @@ export const Footer = () => {
                   <Image src="/red-member.png" width={150} height={150} alt="profile" />
                   <span className="">
                     <p className="text-3xl">{shortenAddress(address)}</p>
-                    <p></p>
+                    <p>
+                      {Number(totalCounter) <= 2 ? (
+                        <Image src="/bronze.png" width={80} height={80} alt="" />
+                      ) : Number(totalCounter) <= 4 ? (
+                        <Image src="/silver.png" width={80} height={80} alt="" />
+                      ) : Number(totalCounter) <= 6 ? (
+                        <Image src="/gold.png" width={80} height={80} alt="" />
+                      ) : (
+                        <Image src="/platinum.png" width={80} height={80} alt="" />
+                      )}
+                    </p>
                   </span>
                 </div>
               )
