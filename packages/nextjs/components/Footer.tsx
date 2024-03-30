@@ -1,40 +1,49 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { hardhat } from "viem/chains";
-import { CurrencyDollarIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
-import { Faucet } from "~~/components/scaffold-eth";
-import { useTargetNetwork } from "~~/hooks/scaffold-eth/useTargetNetwork";
-import { useGlobalState } from "~~/services/store/store";
+import Loader from "./shared/Loader";
+
+import { useAccount } from "wagmi";
+
+
+import { useScaffoldContractRead } from "~~/hooks/scaffold-eth";
+
+import shortenAddress from "~~/utils/shortenAddress";
 
 /**
  * Site footer
  */
 export const Footer = () => {
-  const nativeCurrencyPrice = useGlobalState(state => state.nativeCurrencyPrice);
-  const { targetNetwork } = useTargetNetwork();
-  const isLocalNetwork = targetNetwork.id === hardhat.id;
+  const { address, isConnecting } = useAccount();
+  console.log("account", address);
+
+  // const { data: totalCounter } = useScaffoldContractRead({
+  //   contractName: "YourContract",
+  //   functionName: "userGreetingCounter",
+  //   args: ["0xd8da6bf26964af9d7eed9e03e53415d37aa96045"],
+  // });
 
   return (
     <div className="">
       <div>
         <div className="fixed flex justify-between items-center w-full z-10 p-4 bottom-0 left-0 pointer-events-none">
           <div className="flex flex-col md:flex-row gap-2 pointer-events-auto">
-            {nativeCurrencyPrice > 0 && (
-              <div>
-                <div className="btn btn-primary btn-sm font-normal gap-1 cursor-auto">
-                  <CurrencyDollarIcon className="h-4 w-4" />
-                  <span>{nativeCurrencyPrice}</span>
+            {address ? (
+              isConnecting ? (
+                <div className="flex items-center justify-center">
+                  <Loader />
                 </div>
-              </div>
-            )}
-            {isLocalNetwork && (
-              <>
-                <Faucet />
-                <Link href="/blockexplorer" passHref className="btn btn-primary btn-sm font-normal gap-1">
-                  <MagnifyingGlassIcon className="h-4 w-4" />
-                  <span>Block Explorer</span>
-                </Link>
-              </>
+              ) : (
+                <div className="flex gap-4">
+                  <Image src="/red-member.png" width={150} height={150} alt="profile" />
+                  <span className="">
+                    <p className="text-3xl">{shortenAddress(address)}</p>
+                    <p></p>
+                  </span>
+                </div>
+              )
+            ) : (
+              <></>
             )}
           </div>
         </div>
