@@ -8,7 +8,7 @@ import ChatMessages from "./components/ChatMessages";
 import { MessagesContext } from "~~/context/messages";
 import useAIChatServer from "~~/hooks/getAIServer.tsx/useAIChatServer";
 
-export function ClaudeToxicAccordion() {
+export function ClaudeToxicAccordion({lock} : any) {
   const [close, setClose] = useState(0);
 
   const { removeAllMessages, messages } = useContext(MessagesContext);
@@ -53,7 +53,7 @@ export function ClaudeToxicAccordion() {
               }}
               className="px-6 border-b border-red-500"
             >
-              <ChatHeader comment="Stage 3 : Claude Toxic Attack" />
+              <ChatHeader comment="Stage 3 : Claude Toxic Attack" lock={lock}/>
             </AccordionTrigger>
             <AccordionContent>
               <div className="flex flex-col text-black ">

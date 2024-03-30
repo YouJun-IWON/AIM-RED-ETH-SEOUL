@@ -9,7 +9,7 @@ import ChatMessages from "./components/ChatMessages";
 import { MessagesContext } from "~~/context/messages";
 import useAIChatServer from "~~/hooks/getAIServer.tsx/useAIChatServer";
 
-export function ClaudePhoneAccordion() {
+export function ClaudePhoneAccordion({lock} : any) {
   const [close, setClose] = useState(0);
   const router = useRouter();
 
@@ -55,7 +55,7 @@ export function ClaudePhoneAccordion() {
               }}
               className="px-6 border-b border-red-500"
             >
-              <ChatHeader comment="Stage 4 : Claude Phone number Attack" />
+              <ChatHeader comment="Stage 4 : Claude Phone number Attack" lock={lock}/>
             </AccordionTrigger>
             <AccordionContent>
               <div className="flex flex-col text-black ">

@@ -44,6 +44,10 @@ export const metadata: Metadata = {
 };
 
 const ScaffoldEthApp = ({ children }: { children: React.ReactNode }) => {
+
+ 
+
+
   return (
     <html suppressHydrationWarning>
       <body>

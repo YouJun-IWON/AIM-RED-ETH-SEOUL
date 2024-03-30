@@ -3,6 +3,7 @@ import loading from "../../loading";
 import Loader from "~~/components/shared/Loader";
 import { Button } from "~~/components/ui/button";
 import { MessagesContext } from "~~/context/messages";
+import { cn } from "~~/utils/cn";
 
 const GenImageButton = ({ setImgUrl, setCount, count, setLoading, loading }: any) => {
   const { messages } = useContext(MessagesContext);
@@ -35,7 +36,7 @@ const GenImageButton = ({ setImgUrl, setCount, count, setLoading, loading }: any
   };
 
   return (
-    <Button disabled={count !== 0} onClick={generateImage}>
+    <Button className={cn(count === 0 ? "bg-red-800" : "", 'min-w-[200px]')} disabled={count !== 0} onClick={generateImage}>
       {loading ? <Loader /> : "1. Convert Red Image"}
     </Button>
   );

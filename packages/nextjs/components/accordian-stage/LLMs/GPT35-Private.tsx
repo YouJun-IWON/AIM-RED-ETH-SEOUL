@@ -9,7 +9,7 @@ import ChatMessages from "./components/ChatMessages";
 import { MessagesContext } from "~~/context/messages";
 import useAIChatServer from "~~/hooks/getAIServer.tsx/useAIChatServer";
 
-export function GPT35PhoneAccordion({ setstage2Clicked, stage1Clicked }: any) {
+export function GPT35PhoneAccordion({ setstage2Clicked, stage1Clicked, lock }: any) {
   const [close, setClose] = useState(0);
   const router = useRouter();
 
@@ -56,7 +56,7 @@ export function GPT35PhoneAccordion({ setstage2Clicked, stage1Clicked }: any) {
               }}
               className="px-6 border-b border-red-500"
             >
-              <ChatHeader comment="Stage 2 : GPT-3.5 Phone number Attack" />
+              <ChatHeader comment="Stage 2 : GPT-3.5 Phone number Attack" lock={lock} />
             </AccordionTrigger>
             <AccordionContent>
               <div className="flex flex-col text-black ">

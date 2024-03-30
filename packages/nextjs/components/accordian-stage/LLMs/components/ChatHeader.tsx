@@ -3,13 +3,13 @@
 import { useContext } from "react";
 import { MessagesContext } from "~~/context/messages";
 
-const ChatHeader = ({ comment }: any) => {
+const ChatHeader = ({ comment, lock }: any) => {
   const { messages } = useContext(MessagesContext);
 
   return (
     <div className="w-full flex gap-3 justify-between items-center text-white hover:text-red-500 transition-all ease-in-out">
       <div className="flex flex-col text-center">
-        <p className="text-lg">{comment}</p>
+        <p className="text-lg">{lock ? comment + '🔒' : comment}</p>
       </div>
       <div className="flex flex-col text-center gap-2">
         {messages.length <= 2 ? (

@@ -5,10 +5,11 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "..
 import ChatHeader from "./components/ChatHeader";
 import ChatInput from "./components/ChatInput";
 import ChatMessages from "./components/ChatMessages";
+import Loader from "~~/components/shared/Loader";
 import { MessagesContext } from "~~/context/messages";
 import useAIChatServer from "~~/hooks/getAIServer.tsx/useAIChatServer";
 
-export function GPT35ToxicAccordion({ setStage1Clicked, stage2Clicked }: any) {
+export function GPT35ToxicAccordion({ setStage1Clicked, stage2Clicked, lock }: any) {
   const [close, setClose] = useState(0);
 
   const { removeAllMessages, messages } = useContext(MessagesContext);
@@ -41,7 +42,7 @@ export function GPT35ToxicAccordion({ setStage1Clicked, stage2Clicked }: any) {
         <div className="bg-[#272727] border border-red-800 rounded-md overflow-hidden ">
           <div className="flex flex-col ">
             <AccordionTrigger
-              disabled={isLoading || stage2Clicked}
+              disabled={isLoading || stage2Clicked || lock}
               onClick={() => {
                 if (close) {
                   removeAllMessages();
@@ -54,7 +55,7 @@ export function GPT35ToxicAccordion({ setStage1Clicked, stage2Clicked }: any) {
               }}
               className="px-6 border-b border-red-500"
             >
-              <ChatHeader comment="Stage 1 : GPT-3.5 Toxic Attack" />
+              <ChatHeader comment="Stage 1 : GPT-3.5 Toxic Attack" lock={lock} />
             </AccordionTrigger>
             <AccordionContent>
               <div className="flex flex-col text-black ">

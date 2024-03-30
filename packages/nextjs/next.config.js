@@ -9,6 +9,10 @@ const nextConfig = {
       {
         hostname: 'daisyui.com',
         protocol: 'https'
+      },
+      {
+        hostname: 'oaidalleapiprodscus.blob.core.windows.net',
+        protocol: 'https'
       }
      
     ]
