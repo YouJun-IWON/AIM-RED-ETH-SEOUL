@@ -119,7 +119,7 @@ const config: HardhatUserConfig = {
       accounts: [deployerPrivateKey],
     },
     zkatana: {
-      url: `https://rpc.startale.com/zkatana`,
+      url: `https://rpc.zkatana.gelato.digital`,
       accounts: [deployerPrivateKey],
       verify: {
         etherscan: {

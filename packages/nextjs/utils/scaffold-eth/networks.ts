@@ -21,6 +21,9 @@ export const NETWORKS_EXTRA_DATA: Record<string, ChainAttributes> = {
   [chains.sepolia.id]: {
     color: ["#5f4bb6", "#87ff65"],
   },
+  [chains.goerli.id]: {
+    color: "#0975F6",
+  },
   [chains.gnosis.id]: {
     color: "#48a9a6",
   },
@@ -33,10 +36,10 @@ export const NETWORKS_EXTRA_DATA: Record<string, ChainAttributes> = {
     nativeCurrencyTokenAddress: "0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0",
   },
   [chains.optimismSepolia.id]: {
-    color: "#f01a37",
+    color: "#337",
   },
   [chains.optimism.id]: {
-    color: "#f01a37",
+    color: "#337",
   },
   [chains.arbitrumSepolia.id]: {
     color: "#28a0f0",
@@ -52,6 +55,12 @@ export const NETWORKS_EXTRA_DATA: Record<string, ChainAttributes> = {
   },
   [chains.scrollSepolia.id]: {
     color: "#fbebd4",
+  },
+  [chains.astar.id]: {
+    color: "#f01a37",
+  },
+  [chains.astarZkatana.id]: {
+    color: "#f01a37",
   },
 };
 
