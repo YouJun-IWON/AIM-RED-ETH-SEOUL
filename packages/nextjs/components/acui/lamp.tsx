@@ -4,6 +4,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { Button } from "../ui/button";
 import { motion } from "framer-motion";
 import { cn } from "~~/utils/cn";
 
@@ -37,9 +38,9 @@ export const LampContainer = ({ children, className }: { children: React.ReactNo
         className,
       )}
     >
-      <div className="grid grid-cols-2 h-[19rem] items-center justify-center w-5/6 mb-10 z-50 translate-y-[150px]">
+      <div className="grid grid-cols-2  sm:h-[19rem] items-center justify-center w-5/6 mb-10 z-50 sm:translate-y-[150px]">
         <div className="px-5">
-          <div className="flex gap-6">
+          <div className="flex gap-6 max-sm:hidden">
             <Image
               src="/General.png"
               className="min-w-[200px] rounded-lg shadow-lg shadow-red-800"
@@ -67,7 +68,7 @@ export const LampContainer = ({ children, className }: { children: React.ReactNo
             </div>
           </div>
         </div>
-        <div className="px-5">
+        <div className="px-5 max-sm:hidden">
           <div className="text-center font-bold text-3xl">Leaderboard 🏆</div>
           <div className="overflow-x-auto">
             <table className="table">
@@ -97,7 +98,7 @@ export const LampContainer = ({ children, className }: { children: React.ReactNo
         </div>
       </div>
 
-      <div className="relative flex w-full flex-1 scale-y-80 pt-[150px] items-center justify-center isolate z-0 ">
+      <div className="relative flex w-full flex-1 scale-y-80 pt-[150px] items-center justify-center isolate z-0 max-sm:hidden">
         <motion.div
           initial={{ opacity: 0.5, width: "15rem" }}
           whileInView={{ opacity: 1, width: "30rem" }}
@@ -156,6 +157,8 @@ export const LampContainer = ({ children, className }: { children: React.ReactNo
 
         <div className="absolute inset-auto z-40 h-44 w-full -translate-y-[12.5rem] bg-slate-950 "></div>
       </div>
+
+     
 
       <div className="relative z-50 flex -translate-y-80 flex-col items-center px-5">{children}</div>
     </div>

@@ -11,7 +11,7 @@ const Home: NextPage = () => {
   return (
     <>
       <LampContainer>
-        <div className="grid grid-cols-3 gap-32">
+        <div className="grid sm:grid-cols-3 gap-32 max-sm:mt-[500px]">
           <motion.h1
             initial={{ opacity: 0.5, y: 200 }}
             whileInView={{ opacity: 1, y: 120 }}
@@ -20,7 +20,7 @@ const Home: NextPage = () => {
               duration: 0.8,
               ease: "easeInOut",
             }}
-            className=" bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent "
+            className="max-sm:hidden bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent "
           >
             <HoverBorderGradient
               containerClassName="rounded-full"
@@ -50,6 +50,7 @@ const Home: NextPage = () => {
               <span>Let&apos;s Hack</span>
             </HoverBorderGradient>
           </motion.h1>
+          <span className="flex sm:hidden text-center">Optimized for desktop..😂</span>
           <motion.h1
             initial={{ opacity: 0.5, y: 200 }}
             whileInView={{ opacity: 1, y: 120 }}

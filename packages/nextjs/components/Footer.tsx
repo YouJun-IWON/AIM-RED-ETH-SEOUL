@@ -30,23 +30,25 @@ export const Footer = () => {
                   <Loader />
                 </div>
               ) : (
-                <div className="flex gap-4">
-                  <Image src="/red-member.png" width={120} height={120} alt="profile" />
-                  <span className="translate-y-4">
-                    <p className="text-xl">{shortenAddress(address)}</p>
-                    <p>
-                      {Number(totalCounter) <= 2 ? (
-                        <Image src="/bronze.png" width={80} height={80} alt="" />
-                      ) : Number(totalCounter) <= 4 ? (
-                        <Image src="/silver.png" width={80} height={80} alt="" />
-                      ) : Number(totalCounter) <= 6 ? (
-                        <Image src="/gold.png" width={80} height={80} alt="" />
-                      ) : (
-                        <Image src="/platinum.png" width={80} height={80} alt="" />
-                      )}
-                    </p>
-                  </span>
-                </div>
+                <>
+                  <div className="flex gap-4 max-sm:hidden border border-1 p-2 border-red-600">
+                    <Image src="/red-member.png" width={120} height={120} alt="profile" />
+                    <span className="translate-y-4">
+                      <p className="text-xl">{shortenAddress(address)}</p>
+                      <p>
+                        {Number(totalCounter) <= 2 ? (
+                          <Image src="/bronze.png" width={80} height={80} alt="" />
+                        ) : Number(totalCounter) <= 4 ? (
+                          <Image src="/silver.png" width={80} height={80} alt="" />
+                        ) : Number(totalCounter) <= 6 ? (
+                          <Image src="/gold.png" width={80} height={80} alt="" />
+                        ) : (
+                          <Image src="/platinum.png" width={80} height={80} alt="" />
+                        )}
+                      </p>
+                    </span>
+                  </div>
+                </>
               )
             ) : (
               <></>
