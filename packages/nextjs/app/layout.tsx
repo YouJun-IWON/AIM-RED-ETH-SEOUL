@@ -50,7 +50,7 @@ const ScaffoldEthApp = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <html suppressHydrationWarning>
-      <body>
+      <body className='min-w-[1500px]'>
         <ThemeProvider defaultTheme="dark">
           <ScaffoldEthAppWithProviders>
             <QueryProvider>{children}</QueryProvider>

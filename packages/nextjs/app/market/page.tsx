@@ -148,7 +148,7 @@ export default function Market() {
               </select>
             </div>
           </div>
-          <div className="grid grid-cols-5 gap-5 p-4">
+          <div className="grid grid-cols-4 2xl:grid-cols-5 gap-5 p-4">
             {nftList.map((nft, index) => {
               // 마켓플레이스 nft 구분 로직
               // order 없으면
