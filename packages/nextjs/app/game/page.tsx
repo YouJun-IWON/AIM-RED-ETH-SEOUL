@@ -119,7 +119,7 @@ const Game = () => {
     setLoading(false);
     setLock(false);
 
-    alert(`use 1 token`);
+    alert(`Unlock the Stage.`);
   };
 
   return (
@@ -179,6 +179,10 @@ const Game = () => {
                           On the next page, you will encounter real-life examples of these attack prompts. AIM agents,
                           protect your country and the world for the ethical use of AI!
                         </p>
+                        <p className="text-red-600">
+                          Here, it's like your bullet in tokens. Never expend them in vain. <br /> Get the token and
+                          start attacking LLM...
+                        </p>
                       </span>
                       <GetToken />
                     </span>
@@ -197,7 +201,7 @@ const Game = () => {
                           believe you can do it and become a member of our team.
                         </p>
                       </span>
-                      <Button className={cn(lock ? "bg-red-800" : "")} onClick={useToken}>
+                      <Button disabled={!lock} className={cn(lock ? "bg-red-800" : "")} onClick={useToken}>
                         {loading ? <Loader /> : "Unlock Stage"}
                       </Button>
                     </div>
@@ -217,7 +221,7 @@ const Game = () => {
                           in place, but there are definitely loopholes.
                         </p>
                       </span>
-                      <Button className={cn(lock ? "bg-red-800" : "")} onClick={useToken}>
+                      <Button disabled={!lock} className={cn(lock ? "bg-red-800" : "")} onClick={useToken}>
                         {loading ? <Loader /> : "Unlock Stage"}
                       </Button>
                     </div>
@@ -236,7 +240,7 @@ const Game = () => {
                           in place, but there are definitely loopholes.
                         </p>
                       </span>
-                      <Button className={cn(lock ? "bg-red-800" : "")} onClick={useToken}>
+                      <Button disabled={!lock} className={cn(lock ? "bg-red-800" : "")} onClick={useToken}>
                         {loading ? <Loader /> : "Unlock Stage"}
                       </Button>
                     </div>
@@ -255,7 +259,7 @@ const Game = () => {
                           in place, but there are definitely loopholes.
                         </p>
                       </span>
-                      <Button className={cn(lock ? "bg-red-800" : "")} onClick={useToken}>
+                      <Button disabled={!lock} className={cn(lock ? "bg-red-800" : "")} onClick={useToken}>
                         {loading ? <Loader /> : "Unlock Stage"}
                       </Button>
                     </div>

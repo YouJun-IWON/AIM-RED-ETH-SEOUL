@@ -3,11 +3,13 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { cn } from "~~/utils/cn";
 
 export const LampContainer = ({ children, className }: { children: React.ReactNode; className?: string }) => {
   const [ranking, setRanking] = useState([]);
+  const router = useRouter();
 
   const fetchLeaderBoard = async () => {
     try {
@@ -46,15 +48,22 @@ export const LampContainer = ({ children, className }: { children: React.ReactNo
               alt="general"
             />
             <div>
-              <span className="flex flex-col">
+              <span className="flex flex-col -space-y-4 ">
                 <p>Welcome to</p>
                 <h1 className="text-5xl font-bold text-red-500">AIM RED Force</h1>
               </span>
-              <p className="py-6">
+              <p className="py-3">
                 Unleash your hacking prowess with AIM Squad, an elite team of LLM attackers. Join forces with the best
                 and conquer the AI realm, one exploit at a time!
               </p>
-              <button className="btn btn-primary">Tutorial</button>
+              <span className="-space-y-4">
+                <p>Token :</p>
+                <p>0xe2691dE85F0B0f64B953B0Ac01F0Bed447Ca95BD</p>
+              </span>
+
+              <button className="btn btn-primary mt-6" onClick={() => router.push("/game")}>
+                Tutorial
+              </button>
             </div>
           </div>
         </div>
