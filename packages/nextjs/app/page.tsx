@@ -28,7 +28,7 @@ const Home: NextPage = () => {
               className="bg-black  text-black dark:text-white flex items-center space-x-2"
               onClick={() => router.push("/market")}
             >
-              <span>NFT Market</span>
+              <span className='text-white'>NFT Market</span>
             </HoverBorderGradient>
           </motion.h1>
           <motion.h1
@@ -47,7 +47,7 @@ const Home: NextPage = () => {
               className="bg-black  text-black dark:text-white flex items-center space-x-2"
               onClick={() => router.push("/game")}
             >
-              <span>Let&apos;s Hack</span>
+              <span className='text-white'>Let&apos;s Hack</span>
             </HoverBorderGradient>
           </motion.h1>
           <span className="flex sm:hidden text-center">Optimized for desktop..😂</span>
@@ -67,7 +67,7 @@ const Home: NextPage = () => {
               as="button"
               className="bg-black text-black dark:text-white flex items-center space-x-2"
             >
-              <span>Community</span>
+              <span className='text-white'>Community</span>
             </HoverBorderGradient>
           </motion.h1>
         </div>

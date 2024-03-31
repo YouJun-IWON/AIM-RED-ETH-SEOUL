@@ -44,13 +44,9 @@ export const metadata: Metadata = {
 };
 
 const ScaffoldEthApp = ({ children }: { children: React.ReactNode }) => {
-
- 
-
-
   return (
     <html suppressHydrationWarning>
-      <body className='min-w-[1500px]'>
+      <body>
         <ThemeProvider defaultTheme="dark">
           <ScaffoldEthAppWithProviders>
             <QueryProvider>{children}</QueryProvider>
