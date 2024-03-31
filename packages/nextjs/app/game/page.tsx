@@ -180,7 +180,7 @@ const Game = () => {
                           protect your country and the world for the ethical use of AI!
                         </p>
                         <p className="text-red-600">
-                          Here, it's like your bullet in tokens. Never expend them in vain. <br /> Get the token and
+                          Here, it&apos;s like your bullet in tokens. Never expend them in vain. <br /> Get the token and
                           start attacking LLM...
                         </p>
                       </span>
