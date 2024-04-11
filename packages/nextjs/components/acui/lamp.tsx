@@ -57,10 +57,6 @@ export const LampContainer = ({ children, className }: { children: React.ReactNo
                 Unleash your hacking prowess with AIM Squad, an elite team of LLM attackers. Join forces with the best
                 and conquer the AI realm, one exploit at a time!
               </p>
-              <span className="-space-y-4">
-                <p>Token :</p>
-                <p>0xe2691dE85F0B0f64B953B0Ac01F0Bed447Ca95BD</p>
-              </span>
 
               <button className="btn btn-primary mt-6" onClick={() => router.push("/game")}>
                 Tutorial

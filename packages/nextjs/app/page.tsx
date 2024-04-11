@@ -28,7 +28,7 @@ const Home: NextPage = () => {
               className="bg-black  text-black dark:text-white flex items-center space-x-2"
               onClick={() => router.push("/market")}
             >
-              <span className='text-white'>NFT Market</span>
+              <span className='text-white'>Prompt Market</span>
             </HoverBorderGradient>
           </motion.h1>
           <motion.h1

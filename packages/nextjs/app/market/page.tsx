@@ -68,7 +68,7 @@ export default function Market() {
 
   return (
     <div className="flex flex-col bg-stone-800 pt-16">
-      <div className="text-5xl font-bold pt-8 pl-16 pb-2">NFT Market</div>
+      <div className="text-5xl font-bold pt-8 pl-16 pb-2">Prompt Market</div>
       <div className="flex flex-row w-full">
         <div className="flex flex-col p-4 pl-12 gap-8">
           <div role="tablist" className="tabs tabs-boxed tabs-lg mt-1">
